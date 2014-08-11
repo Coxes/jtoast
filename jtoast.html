@@ -3,83 +3,33 @@
 <head>
 	<title>jtoast</title>
 	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+	<link rel="stylesheet" type="text/css" href="css/jtoast.css">
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/jtoast.js"></script>
 	<style type="text/css">
 		body{
 			font-size: 14px;
 		}
-
-		.jtoast-view{ 
-	        position:fixed; /*对于火狐等其他浏览器需要设置的*/ 
-	        left: 0;
-	        right: 0;
-	        top: 0;
-	        bottom: 0;
-	        filter: alpha(Opacity = 50);
-			-moz-opacity: 0.5;
-			opacity: 0.5;
-			background-color: #000;
-	        _position: absolute;  
-	        _clear: both;
-	        _top:expression(eval(document.compatMode &&   
-	               document.compatMode=='CSS1Compat') ?   
-	               documentElement.scrollTop   
-	               +(documentElement.clientHeight-this.clientHeight) - 1   
-	               : document.body.scrollTop   
-	               +(document.body.clientHeight-this.clientHeight) - 1); 
+	</style>
+	<script type="text/javascript">
+		
+		function aa(){
+			jtoast.alert("alert");
 		}
-
-		.jtoast-view .jtoast-box{
-			width: 450px;
-			border: solid 1px #d8d8d8;
-			z-index: 101;
-			background: #FFF;
-			margin-top:10%;
-			margin: 10% auto 0 auto;
-			position: relative;
-			padding-bottom: 20px;
+		function bb(){
+			jtoast.confirm("confirm",function(r){
+				alert(r)
+			});
 		}
-
-		.jtoast-view .jtoast-title {
-			padding: 10px;
-			color: #0b92dc;
-			font-weight: bold;
-			font-size: 1.2em;
-		}
-		.jtoast-view .jtoast-title img {
-			float: right;
-			cursor: pointer;
-		}
-		.jtoast-view .jtoast-content {
-			margin: 0 60px;
-		}
-		.jtoast-view  .jtoast-btn{
-			border: 1px solid #d8d8d8;
-			padding: 5px 15px;
-			margin-left: 10px;
-			text-decoration: none;
-			color: #000;
-			font-size: 0.9em;
-			font-weight: bold;
-		}
-		.jtoast-view  .jtoast-opt{
-			text-align: right;
+		function cc(){
+			jtoast.show({title:'showTitle',content:'Show',btnOk:true,shade:true});
 		}
 		
-	</style>
+	</script>
 </head>
 	<body>
-		<div class="jtoast-view">
-			<div class="jtoast-box">
-				<div class="jtoast-title">
-					<img src="/poseidon/static/images/close.png" width="16" height="16" alt="关闭"><span id="title">温馨提示</span>
-				</div>
-				<div class="jtoast-content">
-					<p>您确定将所有消息设为已读吗？</p>
-					<div class="jtoast-opt">
-							<a href="#" class="jtoast-btn">确定</a><a href="#" class="jtoast-btn" id="cancel-alter">取消</a>
-					</div>
-				</div>
-			</div>
-		</div>
+		<input type="button" onclick="aa()" value="alert"/>
+		<input type="button" onclick="bb()" value="confirm"/>
+		<input type="button" onclick="cc()" value="show"/>
 	</body>
 </html>
