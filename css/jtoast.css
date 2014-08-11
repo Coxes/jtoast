@@ -2,7 +2,7 @@
  * Jtoast.css  v1.0
  */
 .jtoast-view{ 
-    position:fixed; /*对于火狐等其他浏览器需要设置的*/ 
+    position:fixed;
     left: 0;
     right: 0;
     top: 0;
@@ -24,14 +24,14 @@
 	height: 100%;
 	z-index: 100;
 	background-color: #000;
-	filter: alpha(Opacity = 0);
-	-moz-opacity: 0;
-	opacity: 0;
-}
-.jtoast-sv-20{
 	filter: alpha(Opacity = 20);
 	-moz-opacity: 0.2;
 	opacity: 0.2;
+}
+.jtoast-sv-00{
+	filter: alpha(Opacity = 0);
+	-moz-opacity: 0;
+	opacity: 0;
 }
 
 .jtoast-view .jtoast-box{
@@ -39,8 +39,7 @@
 	border: solid 1px #d8d8d8;
 	z-index: 101;
 	background: #FFF;
-	margin-top:10%;
-	margin: 10% auto 0 auto;
+	margin: 15% auto 0 auto;
 	position: relative;
 	padding-bottom: 20px;
 }
