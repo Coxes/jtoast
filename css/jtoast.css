@@ -3,10 +3,6 @@
  */
 .jtoast-view{ 
     position:fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
     z-index: 99;
 	line-height: 1.4em;
     _position: absolute;  
@@ -18,6 +14,21 @@
            : document.body.scrollTop   
            +(document.body.clientHeight-this.clientHeight) - 1); 
 }
+.mode-shade{
+	left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.mode-normal{
+	left: 0;
+    right: 0;
+    top: 20%;
+    margin: auto;
+    width: 450px;
+}
+
 .jtoast-shade{
 	position: absolute;
 	width: 100%;
@@ -28,20 +39,27 @@
 	-moz-opacity: 0.2;
 	opacity: 0.2;
 }
-.jtoast-sv-00{
-	filter: alpha(Opacity = 0);
-	-moz-opacity: 0;
-	opacity: 0;
+
+.mode-normal .jtoast-shade{
+	display: none;
 }
 
 .jtoast-view .jtoast-box{
+	position: absolute;
 	width: 450px;
+	left: 0px;
+	right: 0px;
 	border: solid 1px #d8d8d8;
 	z-index: 101;
 	background: #FFF;
-	margin: 15% auto 0 auto;
-	position: relative;
+	margin: auto;
 	padding-bottom: 20px;
+}
+.mode-shade .jtoast-box{
+	top: 20%;
+}
+.mode-normal .jtoast-box{
+	top: 0px;
 }
 
 .jtoast-view .jtoast-title {

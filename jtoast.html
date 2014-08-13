@@ -22,14 +22,17 @@
 			});
 		}
 		function cc(){
-			jtoast.show({title:'showTitle',content:'Show',btnOk:true,shade:true});
+			jtoast.show({title:'showTitle',content:'Show',btnOk:true,shade:false});
 		}
-		
+		function dd(){
+			jtoast.show({title:'showTitle',content:'<a href="http://www.baidu.com">你好</a>',btnOk:true,shade:true});
+		}
 	</script>
 </head>
 	<body>
 		<input type="button" onclick="aa()" value="alert"/>
 		<input type="button" onclick="bb()" value="confirm"/>
 		<input type="button" onclick="cc()" value="show"/>
+		<input type="button" onclick="dd()" value="show2"/>
 	</body>
 </html>

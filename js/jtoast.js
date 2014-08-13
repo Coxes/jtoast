@@ -7,10 +7,14 @@
 	function createView(cfg) {
 		cfg = cfg || {};
 
-		var content = cfg.content || '', title = cfg.title || '温馨提示', htmlBtn = '', shadeClass = 'jtoast-shade';
+		var content = cfg.content || '', title = cfg.title || '温馨提示';
+		var jtoastViewClass = 'jtoast-view';
+		var htmlBtn = '';
 
-		if (cfg.shade == false) {
-			shadeClass += ' jtoast-sv-00';
+		if(cfg.shade == false){
+			jtoastViewClass+=' mode-normal';
+		}else{
+			jtoastViewClass+=' mode-shade';
 		}
 		if (cfg.btnOk) {
 			htmlBtn += '<a href="javascript:;" class="jtoast-btn" property=true >确定</a>';
@@ -18,9 +22,7 @@
 		if (cfg.btnCancel) {
 			htmlBtn += '<a href="javascript:;" class="jtoast-btn" property=false >取消</a>';
 		}
-		var html = $('<div class="jtoast-view"><div class="'
-				+ shadeClass
-				+ '"></div><div class="jtoast-box"><div class="jtoast-title"><span id="close"></span> <span id="title">'
+		var html = $('<div class="'+jtoastViewClass+'"><div class="jtoast-shade"></div><div class="jtoast-box"><div class="jtoast-title"><span id="close"></span> <span id="title">'
 				+ title + '</span></div><div class="jtoast-content"><p>'
 				+ content + '</p><div class="jtoast-opt">' + htmlBtn
 				+ '</div></div></div></div>');
