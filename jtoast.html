@@ -1,38 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>jtoast</title>
-	<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
-	<link rel="stylesheet" type="text/css" href="css/jtoast.css">
-	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-	<script type="text/javascript" src="js/jtoast.js"></script>
-	<style type="text/css">
-		body{
-			font-size: 14px;
-		}
-	</style>
-	<script type="text/javascript">
-		
-		function aa(){
-			jtoast.alert("alert");
-		}
-		function bb(){
-			jtoast.confirm("confirm",function(r){
-				alert(r)
-			});
-		}
-		function cc(){
-			jtoast.show({title:'showTitle',content:'Show',btnOk:true,shade:false});
-		}
-		function dd(){
-			jtoast.show({title:'showTitle',content:'<a href="http://www.baidu.com">你好</a>',btnOk:true,shade:true});
-		}
-	</script>
+<title>jtoast</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<link rel="stylesheet" type="text/css" href="css/jtoast.css">
+<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="js/jtoast.js"></script>
+<style type="text/css">
+body {
+	font-size: 14px;
+}
+</style>
+<script type="text/javascript">
+	function aa() {
+		jtoast.alert("alert");
+	}
+	function bb() {
+		jtoast.confirm("confirm", function(r) {
+			alert(r)
+		});
+	}
+	function cc() {
+		jtoast.show({
+			title : 'showTitle',
+			content : 'Show',
+			btnOk : true,
+			shade : false
+		});
+	}
+	function dd() {
+		jtoast.show({
+			title : 'showTitle',
+			content : '<a href="http://www.baidu.com">你好</a>',
+			btnOk : true,
+			shade : true
+		});
+	}
+	function ee() {
+		jtoast.modifyPhone();
+	}
+</script>
 </head>
-	<body>
-		<input type="button" onclick="aa()" value="alert"/>
-		<input type="button" onclick="bb()" value="confirm"/>
-		<input type="button" onclick="cc()" value="show"/>
-		<input type="button" onclick="dd()" value="show2"/>
-	</body>
+<body>
+	<input type="button" onclick="aa()" value="alert" />
+	<input type="button" onclick="bb()" value="confirm" />
+	<input type="button" onclick="cc()" value="show" />
+	<input type="button" onclick="dd()" value="show2" />
+	<input type="button" onclick="ee()" value="show2" />
+	<div class="jtoast-view mode-shade modify">
+		<div class="jtoast-shade"></div>
+		<div class="jtoast-box">
+			<div class="jtoast-title">
+				<span id="close"></span> <span id="title">更改手机号码</span>
+			</div>
+			<div class="jtoast-content">
+				<div class="jt-item">
+					<label class="jt-label">新手机号码</label><input class="jt-input"
+						type="text" maxlength="11" id="newPhoneNumber"
+						name="newPhoneNumber">
+				</div>
+				<div class="jt-item">
+					<span class="mv_msg" id="mynewPhoneNumber">手机号码不能为空</span>
+				</div>
+				<div class="jt-item">
+					<label class="jt-label">登录密码</label><input class="jt-input"
+						type="password" maxlength="16" id="loginPassword"
+						name="loginPassword">
+				</div>
+				<div class="jt-item">
+					<span class="mv_msg" id="myloginPassword"></span>
+				</div>
+				<div class="jt-item">
+					<label class="jt-label">手机验证码</label><input class="jt-input min"
+						type="text" value="" maxlength="4" id="validateCode"
+						name="validateCode" readonly="readonly" style="background: #eee">
+					<a href="javascript:;" class="blue" id="sendValidateCode">点击获取验证码</a>
+				</div>
+				<div class="jt-item">
+					<span class="mv_msg" id="mylostCode" style="margin-left: 130px"></span>
+				</div>
+				<div class="jt-item opt">
+					<a href="javascript:void(0)" id="saveNewPhone"
+						class="jtoast-btn4 jt-blue">保存</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
 </html>

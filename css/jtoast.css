@@ -1,35 +1,35 @@
 /*!
  * Jtoast.css  v1.0
  */
-.jtoast-view{ 
-    position:fixed;
-    z-index: 99;
+.jtoast-view {
+	position: fixed;
+	z-index: 99;
 	line-height: 1.4em;
-    _position: absolute;  
-    _clear: both;
-    _top:expression(eval(document.compatMode &&   
-           document.compatMode=='CSS1Compat') ?   
-           documentElement.scrollTop   
-           +(documentElement.clientHeight-this.clientHeight) - 1   
-           : document.body.scrollTop   
-           +(document.body.clientHeight-this.clientHeight) - 1); 
-}
-.mode-shade{
-	left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
+	_position: absolute;
+	_clear: both;
+	_top: expression(eval(document.compatMode &&   
+           document.compatMode == 'CSS1Compat')?   
+           documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight)-
+		 1: document.body.scrollTop+(document.body.clientHeight-this.clientHeight)-
+		 1);
 }
 
-.mode-normal{
+.mode-shade {
 	left: 0;
-    right: 0;
-    top: 20%;
-    margin: auto;
-    width: 450px;
+	right: 0;
+	top: 0;
+	bottom: 0;
 }
 
-.jtoast-shade{
+.mode-normal {
+	left: 0;
+	right: 0;
+	top: 20%;
+	margin: auto;
+	width: 450px;
+}
+
+.jtoast-shade {
 	position: absolute;
 	width: 100%;
 	height: 100%;
@@ -40,11 +40,11 @@
 	opacity: 0.2;
 }
 
-.mode-normal .jtoast-shade{
+.mode-normal .jtoast-shade {
 	display: none;
 }
 
-.jtoast-view .jtoast-box{
+.jtoast-view .jtoast-box {
 	position: absolute;
 	width: 450px;
 	left: 0px;
@@ -55,10 +55,12 @@
 	margin: auto;
 	padding-bottom: 20px;
 }
-.mode-shade .jtoast-box{
+
+.mode-shade .jtoast-box {
 	top: 20%;
 }
-.mode-normal .jtoast-box{
+
+.mode-normal .jtoast-box {
 	top: 0px;
 }
 
@@ -68,6 +70,7 @@
 	font-weight: bold;
 	font-size: 1.2em;
 }
+
 .jtoast-view .jtoast-title #close {
 	float: right;
 	cursor: pointer;
@@ -76,22 +79,112 @@
 	height: 16px;
 	background-image: url(../images/close.png);
 }
+
 .jtoast-view .jtoast-content {
 	margin: 0 50px;
 }
+
 .jtoast-view .jtoast-content p {
 	margin: 10px 0 20px 0;
 	word-break: break-word;
 }
-.jtoast-view .jtoast-btn{
+
+.jtoast-view  .jtoast-opt {
+	text-align: right;
+}
+
+.jtoast-view .disable{
+	background-color: #eee;
+}
+
+/***/
+.jtoast-view a {
+	text-decoration: none;
+}
+
+a.blue {
+	color: #0b92dc;
+	font-size: 14px;
+}
+
+/**按钮*/
+.jtoast-view a.jtoast-btn {
 	border: 1px solid #d8d8d8;
 	padding: 5px 15px;
 	margin-left: 10px;
-	text-decoration: none;
 	color: #000;
 	font-size: 0.9em;
 	font-weight: bold;
 }
-.jtoast-view  .jtoast-opt{
+
+.jtoast-view a.jtoast-btn4 {
+	display: inline-block;
+	width: 100px;
+	height: 28px;
+	text-align: center;
+	line-height: 28px;
+	font-size: 14px;
+	font-family: "微软雅黑", "Microsoft YaHei";
+}
+
+.jt-blue {
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border: 1px solid #1b95e0;
+	color: #1b95e0;
+}
+
+/**弹出层形态*/
+.modify {
+	
+}
+
+.modify .jtoast-box {
+	width: 500px;
+}
+
+.modify .jt-label {
+	display: block;
+	width: 100px;
+	height: 30px;
+	line-height: 30px;
+	text-align: right;
+	padding-right: 10px;
+	float: left;
+}
+
+.modify .jt-input {
+	width: 250px;
+	height: 20px;
+	padding: 5px;
+	line-height: 20px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-khtml-border-radius: 2px;
+	-webkit-border-radius: 2px;
+	border: 1px solid #d8d8d8;
+	color: #7e7e7e;
+}
+
+.modify .jt-input.min {
+	width: 80px;
+}
+
+.modify .jt-item {
+	padding-top: 5px;
+}
+
+.modify .jt-item .mv_msg {
+	margin-left: 110px;
+	color: #f72828;
+}
+
+.modify .jt-item.opt {
+	text-align: right;
+}
+
+.modify .jt-item.opt {
 	text-align: right;
 }
